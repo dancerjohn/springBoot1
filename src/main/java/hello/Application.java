@@ -1,28 +1,17 @@
 package hello;
 
-import java.util.Arrays;
-import java.util.Set;
-import java.util.function.Consumer;
-
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
-import org.springframework.context.annotation.Bean;
-
-import com.google.common.collect.Sets;
-
-import hello.domain.Account;
-import hello.domain.Bookmark;
-import lombok.extern.slf4j.Slf4j;
 
 @SpringBootApplication
-@Slf4j
+//@Slf4j
 public class Application extends SpringBootServletInitializer {
 
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+		logger.info("Initializing application context");
         return application.sources(Application.class);
     }
     

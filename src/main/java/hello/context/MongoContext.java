@@ -7,10 +7,17 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 import com.mongodb.Mongo;
 import com.mongodb.MongoClient;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Configuration
-@EnableMongoRepositories
+@EnableMongoRepositories(basePackages={"hello.dao"})
+@Slf4j
 public class MongoContext extends AbstractMongoConfiguration {
 
+	public MongoContext(){
+		log.info("Initializing mongo context");
+	}
+	
   @Override
   protected String getDatabaseName() {
     return "bookmarks";
